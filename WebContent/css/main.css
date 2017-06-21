@@ -1,0 +1,35 @@
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+body{
+  background-color: rgb(52, 152, 219);
+}
+
+.titulo-fora{
+  color: #FFFFFF;
+}
+
+/* Menu */
+.dropdown-menu{
+	padding: 0 !important;
+}
+.dropdown-menu>li>a{
+	padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+*2017/05/26
+->alterar status das páginas de edição de text para <select>
+*2017/05/30
+->alterar campos <text> email
+->alterar funções timestamp
+->alterar/criar página de finalização de OS
+
+
+
+SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
