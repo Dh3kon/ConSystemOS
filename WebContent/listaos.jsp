@@ -1,6 +1,4 @@
-<%@page import="com.sistema.model.OrdemServico"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sistema.dao.OrdemServicoDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -84,7 +82,7 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Lista de Ordens de Serviço</h2>
-			<jsp:useBean id="dao" class="com.sistema.dao.OrdemServicoDao"></jsp:useBean>
+			<jsp:useBean id="dao" class="com.consystem.dao.OrdemServicoDao"></jsp:useBean>
 			<table class="table table-hover">
 				<thead>
 					<tr>

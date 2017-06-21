@@ -1,6 +1,6 @@
-<%@page import="com.sistema.model.Tecnico"%>
+<%@page import="com.consystem.model.Tecnico"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sistema.dao.TecnicoDao"%>
+<%@page import="com.consystem.dao.TecnicoDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -84,7 +84,7 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Lista de Técnicos</h2>
-			<jsp:useBean id="dao" class="com.sistema.dao.TecnicoDao"></jsp:useBean>
+			<jsp:useBean id="dao" class="com.consystem.dao.TecnicoDao"></jsp:useBean>
 			<table class="table table-hover">
 				<tr>
 					<td>Código</td>
