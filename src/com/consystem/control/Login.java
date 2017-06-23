@@ -30,15 +30,17 @@ public class Login extends HttpServlet {
 
 		user.setLogin(request.getParameter("login"));
 		user.setSenha(request.getParameter("senha"));
+		user.getTecnico();
 		user.getTipo();
 
 		user = control.validar(user);
 
 		if (user != null && user.getTipo().equals("ADM")) {
 			request.getSession().setAttribute("user", user);
-			response.sendRedirect("home.html");
+			response.sendRedirect("homea.jsp");
 		} else if (user != null && user.getTipo().equals("TEC")) {
-			response.sendRedirect("home.html");
+			request.getSession().setAttribute("user", user);
+			response.sendRedirect("homet.jsp");
 		} else {
 			response.sendRedirect("index.html");
 		}

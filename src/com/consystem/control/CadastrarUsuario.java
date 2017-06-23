@@ -28,7 +28,7 @@ public class CadastrarUsuario extends HttpServlet {
 		Usuario user = new Usuario();
 		user.setLogin(login);
 		user.setSenha(senha);
-		user.setIdTecnico(Integer.parseInt(idTecnico));
+		user.setTecnico(idTecnico);
 		user.setTipo(tipo);
 
 		UsuarioDao dao = new UsuarioDao();

@@ -5,7 +5,7 @@ public class Equipamento {
 	private int idEquipamento;
 	private String descricao;
 	private String marca;
-	private int fornecedor;
+	private String fornecedor;
 	private String tipo;
 	private String numSerie;
 
@@ -33,11 +33,11 @@ public class Equipamento {
 		this.marca = marca;
 	}
 
-	public int getFornecedor() {
+	public String getFornecedor() {
 		return fornecedor;
 	}
 
-	public void setFornecedor(int fornecedor) {
+	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
 	}
 

@@ -12,6 +12,6 @@ public class ConnectionFactory {
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/sisos2", "root", "");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/sisos3", "root", "");
 	}
 }

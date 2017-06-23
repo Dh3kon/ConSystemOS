@@ -5,6 +5,12 @@
 ->alterar funções timestamp
 ->alterar/criar página de finalização de OS
 
-
+================================================================
 
 SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
+
+2017/06/21
+->Eliminar campo Tecnico - Table Serviços - Cadastro Serviços
+
+=================================================================
+

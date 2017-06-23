@@ -23,7 +23,7 @@ public class EditarProduto extends HttpServlet {
 		String idProduto = request.getParameter("idProduto");
 		String descricao = request.getParameter("descricao");
 		String marca = request.getParameter("marca");
-		String idFornecedor = request.getParameter("idFornecedor");
+		String idFornecedor = request.getParameter("fornecedor");
 		String tipo = request.getParameter("tipo");
 		String numSerie = request.getParameter("numSerie");
 
@@ -31,7 +31,7 @@ public class EditarProduto extends HttpServlet {
 		prod.setIdProduto(Integer.parseInt(idProduto));
 		prod.setDescricao(descricao);
 		prod.setMarca(marca);
-		prod.setIdFornecedor(Integer.parseInt(idFornecedor));
+		prod.setFornecedor(idFornecedor);
 		prod.setTipo(tipo);
 		prod.setNumeroSerie(numSerie);
 

@@ -29,7 +29,7 @@ public class EquipamentoDao {
 					"insert into equipamento (descricao, marca, fornecedor, tipo, numero_serie) values (?,?,?,?,?)");
 			stmt.setString(1, equip.getDescricao());
 			stmt.setString(2, equip.getMarca());
-			stmt.setInt(3, equip.getFornecedor());
+			stmt.setString(3, equip.getFornecedor());
 			stmt.setString(4, equip.getTipo());
 			stmt.setString(5, equip.getNumSerie());
 			stmt.execute();
@@ -47,12 +47,12 @@ public class EquipamentoDao {
 
 			while (rs.next()) {
 				Equipamento equip = new Equipamento();
-				equip.setIdEquipamento(rs.getInt(1));
-				equip.setDescricao(rs.getString(2));
-				equip.setMarca(rs.getString(3));
-				equip.setFornecedor(rs.getInt(4));
-				equip.setTipo(rs.getString(5));
-				equip.setNumSerie(rs.getString(6));
+				equip.setIdEquipamento(rs.getInt("idEquip"));
+				equip.setDescricao(rs.getString("descricao"));
+				equip.setMarca(rs.getString("marca"));
+				equip.setFornecedor(rs.getString("fornecedor"));
+				equip.setTipo(rs.getString("tipo"));
+				equip.setNumSerie(rs.getString("numero_serie"));
 				lista.add(equip);
 			}
 			rs.close();
@@ -70,7 +70,7 @@ public class EquipamentoDao {
 							+ "where idEquip = ?");
 			stmt.setString(1, equip.getDescricao());
 			stmt.setString(2, equip.getMarca());
-			stmt.setInt(3, equip.getFornecedor());
+			stmt.setString(3, equip.getFornecedor());
 			stmt.setString(4, equip.getTipo());
 			stmt.setString(5, equip.getNumSerie());
 			stmt.setInt(6, equip.getIdEquipamento());
@@ -90,12 +90,12 @@ public class EquipamentoDao {
 
 			if (rs.next()) {
 				equip = new Equipamento();
-				equip.setIdEquipamento(rs.getInt(1));
-				equip.setDescricao(rs.getString(2));
-				equip.setMarca(rs.getString(3));
-				equip.setFornecedor(rs.getInt(4));
-				equip.setTipo(rs.getString(5));
-				equip.setNumSerie(rs.getString(6));
+				equip.setIdEquipamento(rs.getInt("idEquip"));
+				equip.setDescricao(rs.getString("descricao"));
+				equip.setMarca(rs.getString("marca"));
+				equip.setFornecedor(rs.getString("fornecedor"));
+				equip.setTipo(rs.getString("tipo"));
+				equip.setNumSerie(rs.getString("numero_serie"));
 			}
 			rs.close();
 			stmt.close();

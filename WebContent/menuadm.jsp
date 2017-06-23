@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Bem vindo ao ConSystem</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/main.css">
-</head>
+<%@page import="com.consystem.model.Usuario"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <body>
+	<%
+		Usuario user = (Usuario) session.getAttribute("user");
+	 %>
 	<section id="menu">
 		<div class="container">
 			<div class="row">
@@ -27,21 +23,21 @@
 						<div class="collapse navbar-collapse"
 							id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.html">Home<span
+								<li class="active"><a href="homea.jsp">Home<span
 										class="sr-only">(current)</span></a></li>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Cadastrar <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="cadusuarios.html">Usuário</a></li>
-										<li><a href="cadveiculos.html">Veículo</a></li>
-										<li><a href="cadtecnicos.html">Técnico</a></li>
-										<li><a href="cadprodutos.html">Produto</a></li>
-										<li><a href="cadequipamento.html">Equipamento</a></li>
-										<li><a href="cadservico.html">Serviço</a></li>
-										<li><a href="cadestoque.html">Estoque</a></li>
-										<li><a href="cadfornecedor.html">Fornecedor</a></li>
-										<li><a href="cados.html">Ordem de Serviço</a></li>
+										<li><a href="cadusuarios.jsp">Usuário</a></li>
+										<li><a href="cadveiculos.jsp">Veículo</a></li>
+										<li><a href="cadtecnicos.jsp">Técnico</a></li>
+										<li><a href="cadprodutos.jsp">Produto</a></li>
+										<li><a href="cadequipamento.jsp">Equipamento</a></li>
+										<li><a href="cadservico.jsp">Serviço</a></li>
+										<li><a href="cadestoque.jsp">Estoque</a></li>
+										<li><a href="cadfornecedor.jsp">Fornecedor</a></li>
+										<li><a href="cados.jsp">Ordem de Serviço</a></li>
 									</ul></li>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -63,7 +59,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">Usuário <span class="caret"></span></a>
+									aria-expanded="false"><%=user.getTecnico() %> <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="index.html">Logout</a></li>
 									</ul></li>
@@ -74,11 +70,5 @@
 			</div>
 		</div>
 	</section>
-	<div class="jumbotron">
-      <div class="container">
-        <h1>Bem vindo!</h1>
-        <p>Este aplicativo foi desenvolvido pela equipe ConSystem</p>
-      </div>
-    </div>
 </body>
 </html>

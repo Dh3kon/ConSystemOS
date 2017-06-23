@@ -5,7 +5,7 @@ public class Usuario {
 	private int idUsuario;
 	private String login;
 	private String senha;
-	private int idTecnico;
+	private String tecnico;
 	private String tipo;
 
 	public int getIdUsuario() {
@@ -32,12 +32,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public int getIdTecnico() {
-		return idTecnico;
+	public String getTecnico() {
+		return tecnico;
 	}
 
-	public void setIdTecnico(int idTecnico) {
-		this.idTecnico = idTecnico;
+	public void setTecnico(String tecnico) {
+		this.tecnico = tecnico;
 	}
 
 	public String getTipo() {

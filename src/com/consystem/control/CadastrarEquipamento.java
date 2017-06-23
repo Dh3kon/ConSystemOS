@@ -23,12 +23,12 @@ public class CadastrarEquipamento extends HttpServlet{
 		String marca = request.getParameter("marca");
 		String fornecedor = request.getParameter("fornecedor");
 		String tipo = request.getParameter("tipo");
-		String numSerie = request.getParameter("numSerie");
+		String numSerie = request.getParameter("numero_serie");
 		
 		Equipamento equip = new Equipamento();
 		equip.setDescricao(descricao);
 		equip.setMarca(marca);
-		equip.setFornecedor(Integer.parseInt(fornecedor));
+		equip.setFornecedor(fornecedor);
 		equip.setTipo(tipo);
 		equip.setNumSerie(numSerie);
 		

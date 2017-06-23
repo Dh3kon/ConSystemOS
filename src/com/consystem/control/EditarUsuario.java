@@ -30,7 +30,7 @@ public class EditarUsuario extends HttpServlet {
 		user.setIdUsuario(Integer.parseInt(id));
 		user.setLogin(login);
 		user.setSenha(senha);
-		user.setIdTecnico(Integer.parseInt(idTecnico));
+		user.setTecnico(idTecnico);
 		user.setTipo(tipo);
 
 		UsuarioDao dao = new UsuarioDao();

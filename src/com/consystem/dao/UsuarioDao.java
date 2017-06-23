@@ -25,10 +25,10 @@ public class UsuarioDao {
 	public void add(Usuario user) {
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("insert into usuario (login, senha, idTecnico, tipo) values (?,?,?,?)");
+					.prepareStatement("insert into usuario (login, senha, tecnico, tipo) values (?,?,?,?)");
 			stmt.setString(1, user.getLogin());
 			stmt.setString(2, user.getSenha());
-			stmt.setInt(3, user.getIdTecnico());
+			stmt.setString(3, user.getTecnico());
 			stmt.setString(4, user.getTipo());
 			stmt.execute();
 			stmt.close();
@@ -45,10 +45,10 @@ public class UsuarioDao {
 
 			while (rs.next()) {
 				Usuario user = new Usuario();
-				user.setIdUsuario(rs.getInt("idUsuario"));
+				user.setIdUsuario(rs.getInt("idUser"));
 				user.setLogin(rs.getString("login"));
 				user.setSenha(rs.getString("senha"));
-				user.setIdTecnico(rs.getInt("idTecnico"));
+				user.setTecnico(rs.getString("tecnico"));
 				user.setTipo(rs.getString("tipo"));
 				lista.add(user);
 			}
@@ -64,10 +64,10 @@ public class UsuarioDao {
 	public void editar(Usuario user) {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
-					"update usuario set login = ?, senha = ?, idTecnico = ?, tipo = ? where idUsuario = ?");
+					"update usuario set login = ?, senha = ?, tecnico = ?, tipo = ? where idUser = ?");
 			stmt.setString(1, user.getLogin());
 			stmt.setString(2, user.getSenha());
-			stmt.setInt(3, user.getIdTecnico());
+			stmt.setString(3, user.getTecnico());
 			stmt.setString(4, user.getTipo());
 			stmt.setInt(5, user.getIdUsuario());
 			stmt.executeUpdate();
@@ -80,16 +80,16 @@ public class UsuarioDao {
 	public Usuario buscaId(int idUsuario) {
 		Usuario user = null;
 		try {
-			PreparedStatement stmt = con.prepareStatement("select * from usuario where idUsuario = ?");
+			PreparedStatement stmt = con.prepareStatement("select * from usuario where idUser = ?");
 			stmt.setInt(1, idUsuario);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
 				user = new Usuario();
-				user.setIdUsuario(rs.getInt("idUsuario"));
+				user.setIdUsuario(rs.getInt("idUser"));
 				user.setLogin(rs.getString("login"));
 				user.setSenha(rs.getString("senha"));
-				user.setIdTecnico(rs.getInt("idTecnico"));
+				user.setTecnico(rs.getString("tecnico"));
 				user.setTipo(rs.getString("tipo"));
 			}
 			rs.close();
@@ -103,7 +103,7 @@ public class UsuarioDao {
 
 	public void delete(int idUsuario) {
 		try {
-			PreparedStatement stmt = con.prepareStatement("delete from usuario where idUsuario = ?");
+			PreparedStatement stmt = con.prepareStatement("delete from usuario where idUser = ?");
 			stmt.setInt(1, idUsuario);
 			stmt.execute();
 			stmt.close();
@@ -116,7 +116,7 @@ public class UsuarioDao {
 		Usuario user = null;
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("select login, senha, tipo from usuario where login = ?");
+			PreparedStatement stmt = con.prepareStatement("select login, senha, tecnico, tipo from usuario where login = ?");
 			stmt.setString(1, login);
 			ResultSet rs = stmt.executeQuery();
 
@@ -124,6 +124,7 @@ public class UsuarioDao {
 				user = new Usuario();
 				user.setLogin(rs.getString("login"));
 				user.setSenha(rs.getString("senha"));
+				user.setTecnico(rs.getString("tecnico"));
 				user.setTipo(rs.getString("tipo"));
 			}
 		} catch (SQLException e) {

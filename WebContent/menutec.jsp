@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Bem vindo ao ConSystem</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-	<section id="menu">
+<section id="menu">
 		<div class="container">
 			<div class="row">
 				<nav class="navbar navbar-default">
@@ -31,25 +20,9 @@
 										class="sr-only">(current)</span></a></li>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">Cadastrar <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="cadusuarios.html">Usuário</a></li>
-										<li><a href="cadveiculos.html">Veículo</a></li>
-										<li><a href="cadtecnicos.html">Técnico</a></li>
-										<li><a href="cadprodutos.html">Produto</a></li>
-										<li><a href="cadequipamento.html">Equipamento</a></li>
-										<li><a href="cadservico.html">Serviço</a></li>
-										<li><a href="cadestoque.html">Estoque</a></li>
-										<li><a href="cadfornecedor.html">Fornecedor</a></li>
-										<li><a href="cados.html">Ordem de Serviço</a></li>
-									</ul></li>
-								<li class="dropdown"><a href="#" class="dropdown-toggle"
-									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Listar <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="listausuario.jsp">Usuário</a></li>
 										<li><a href="listaveiculo.jsp">Veículo</a></li>
-										<li><a href="listatecnico.jsp">Técnico</a></li>
 										<li><a href="listaproduto.jsp">Produto</a></li>
 										<li><a href="listaequipamento.jsp">Equipamento</a></li>
 										<li><a href="listaservico.jsp">Serviço</a></li>
@@ -74,11 +47,3 @@
 			</div>
 		</div>
 	</section>
-	<div class="jumbotron">
-      <div class="container">
-        <h1>Bem vindo!</h1>
-        <p>Este aplicativo foi desenvolvido pela equipe ConSystem</p>
-      </div>
-    </div>
-</body>
-</html>

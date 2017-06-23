@@ -22,14 +22,14 @@ public class CadastrarProduto extends HttpServlet {
 
 		String descricao = request.getParameter("descricao");
 		String marca = request.getParameter("marca");
-		String fornecedor = request.getParameter("idFornecedor");
+		String fornecedor = request.getParameter("fornecedor");
 		String tipo = request.getParameter("tipo");
 		String numeroSerie = request.getParameter("numSerie");
 
 		Produto prod = new Produto();
 		prod.setDescricao(descricao);
 		prod.setMarca(marca);
-		prod.setIdFornecedor(Integer.parseInt(fornecedor));
+		prod.setFornecedor(fornecedor);
 		prod.setTipo(tipo);
 		prod.setNumeroSerie(numeroSerie);
 

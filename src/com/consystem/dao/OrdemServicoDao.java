@@ -103,18 +103,22 @@ public class OrdemServicoDao {
 	public OrdemServico buscaId(int os) {
 		OrdemServico ord = null;
 		try {
-			PreparedStatement stmt = con.prepareStatement("select descricao, status_os, observacao, idTecnico, idVeiculo, idCliente from ordem_servico where os = ?");
+			PreparedStatement stmt = con.prepareStatement("select os, descricao, status_os, dataFinalizacao, observacao, idTecnico, idVeiculo, idCliente from ordem_servico where os = ?");
+			stmt.setInt(1, os);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
 				ord = new OrdemServico();
+				ord.setOs(rs.getInt("os"));
 				ord.setDescricao(rs.getString("descricao"));
 				ord.setStatus(rs.getString("status_os"));
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(rs.getDate("dataFinalizacao"));
+				ord.setDataFinalizacao(cal);
 				ord.setObservacao(rs.getString("observacao"));
 				ord.setIdTecnico(rs.getInt("idTecnico"));
 				ord.setIdVeiculo(rs.getInt("idVeiculo"));
 				ord.setIdCliente(rs.getInt("idCliente"));
-				ord.setOs(rs.getInt("os"));
 			}
 			rs.close();
 			stmt.close();

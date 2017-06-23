@@ -71,6 +71,6 @@ public class EditarTecnico extends HttpServlet {
 		TecnicoDao dao = new TecnicoDao();
 		dao.editar(tec);
 
-		response.sendRedirect("listatec.jsp");
+		response.sendRedirect("listatecnico.jsp");
 	}
 }

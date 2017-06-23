@@ -5,7 +5,7 @@ public class Produto {
 	private int idProduto;
 	private String descricao;
 	private String marca;
-	private int idFornecedor;
+	private String fornecedor;
 	private String tipo;
 	private String numeroSerie;
 
@@ -33,12 +33,12 @@ public class Produto {
 		this.marca = marca;
 	}
 
-	public int getIdFornecedor() {
-		return idFornecedor;
+	public String getFornecedor() {
+		return fornecedor;
 	}
 
-	public void setIdFornecedor(int idFornecedor) {
-		this.idFornecedor = idFornecedor;
+	public void setFornecedor(String fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 	public String getTipo() {

@@ -25,10 +25,10 @@ public class ProdutoDao {
 	public void add(Produto prod) {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
-					"insert into produto (descricao, marca, idFornecedor, tipo, numero_serie) values " + "(?,?,?,?,?)");
+					"insert into produto (descricao, marca, fornecedor, tipo, numero_serie) values " + "(?,?,?,?,?)");
 			stmt.setString(1, prod.getDescricao());
 			stmt.setString(2, prod.getMarca());
-			stmt.setInt(3, prod.getIdFornecedor());
+			stmt.setString(3, prod.getFornecedor());
 			stmt.setString(4, prod.getTipo());
 			stmt.setString(5, prod.getNumeroSerie());
 			stmt.execute();
@@ -49,7 +49,7 @@ public class ProdutoDao {
 				prod.setIdProduto(rs.getInt(1));
 				prod.setDescricao(rs.getString(2));
 				prod.setMarca(rs.getString(3));
-				prod.setIdFornecedor(rs.getInt(4));
+				prod.setFornecedor(rs.getString(4));
 				prod.setTipo(rs.getString(5));
 				prod.setNumeroSerie(rs.getString(6));
 				lista.add(prod);
@@ -66,11 +66,11 @@ public class ProdutoDao {
 	public void editar(Produto prod) {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
-					"update produto set descricao = ?, marca = ?, idFornecedor = ?, tipo = ?, numero_serie = ? "
+					"update produto set descricao = ?, marca = ?, fornecedor = ?, tipo = ?, numero_serie = ? "
 							+ "where idProduto = ?");
 			stmt.setString(1, prod.getDescricao());
 			stmt.setString(2, prod.getMarca());
-			stmt.setInt(3, prod.getIdFornecedor());
+			stmt.setString(3, prod.getFornecedor());
 			stmt.setString(4, prod.getTipo());
 			stmt.setString(5, prod.getNumeroSerie());
 			stmt.setInt(6, prod.getIdProduto());
@@ -93,7 +93,7 @@ public class ProdutoDao {
 				prod.setIdProduto(rs.getInt("idProduto"));
 				prod.setDescricao(rs.getString("descricao"));
 				prod.setMarca(rs.getString("marca"));
-				prod.setIdFornecedor(rs.getInt("idFornecedor"));
+				prod.setFornecedor(rs.getString("fornecedor"));
 				prod.setTipo(rs.getString("tipo"));
 				prod.setNumeroSerie(rs.getString("numero_serie"));
 			}
