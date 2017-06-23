@@ -13,17 +13,29 @@
 </head>
 <body>
 	<c:import url="menuadm.jsp"></c:import>
+	<jsp:useBean id="dao" class="com.consystem.dao.ProdutoDao"></jsp:useBean>
+	<jsp:useBean id="daof" class="com.consystem.dao.FornecedorDao"></jsp:useBean>
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Cadastro de Itens de Estoque</h2>
 				<form action="cadEstoque" method="post">
 					<div class="form-group">
 						<label>Produto</label>
-						<input type="text" class="form-control" name="idProduto" placeholder="Nome do Produto">
+						<select class="form-control" name="produto">
+							<option>Selecione...</option>
+							<c:forEach var="prod" items="${dao.lista}">
+								<option>${prod.descricao}</option>
+							</c:forEach>
+						</select>
 					</div>
 					<div class="form-group">
 						<label>Quantidade</label>
-						<input type="text" class="form-control" name="quantidade" placeholder="Quantidade do Produto">
+						<select class="form-control" name="quantidade">
+							<option>Selecione...</option>
+							<c:forEach var="forn" items="${daof.listarFornecedor}">
+								<option>${forn.nome}</option>
+							</c:forEach>
+						</select>
 					</div>
 					<button type="submit" class="btn btn-primary" value="Salvar">Salvar</button>
 					<a class="btn btn-warning" href="cadequipamento.html" role="button">Limpar</a>

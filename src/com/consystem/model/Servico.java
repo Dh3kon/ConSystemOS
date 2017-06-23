@@ -4,7 +4,6 @@ public class Servico {
 
 	private int idServico;
 	private String descricao;
-	private int idTecnico;
 	private int pontuacao;
 
 	public int getIdServico() {
@@ -21,14 +20,6 @@ public class Servico {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public int getIdTecnico() {
-		return idTecnico;
-	}
-
-	public void setIdTecnico(int idTecnico) {
-		this.idTecnico = idTecnico;
 	}
 
 	public int getPontuacao() {

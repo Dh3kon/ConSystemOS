@@ -32,7 +32,7 @@
 				 %>
 				 <tr>
 				 	<td><%=est.getIdEstoque() %></td>
-				 	<td><%=est.getIdProduto() %></td>
+				 	<td><%=est.getProduto() %></td>
 				 	<td><%=est.getQuantidade() %></td>
 				 	<td><a href="editaestoque.jsp?idEstoque=<%=est.getIdEstoque()%>">editar</a></td>
 				 	<td><a href="removeEstoque?idEstoque=<%=est.getIdEstoque()%>">remover</a></td>

@@ -10,9 +10,9 @@ public class OrdemServico {
 	private String status;
 	private Calendar dataFinalizacao;
 	private String observacao;
-	private int idTecnico;
-	private int idVeiculo;
-	private int idCliente;
+	private String tecnico;
+	private String veiculo;
+	private String cliente;
 
 	public int getOs() {
 		return os;
@@ -62,28 +62,28 @@ public class OrdemServico {
 		this.observacao = observacao;
 	}
 
-	public int getIdTecnico() {
-		return idTecnico;
+	public String getTecnico() {
+		return tecnico;
 	}
 
-	public void setIdTecnico(int idTecnico) {
-		this.idTecnico = idTecnico;
+	public void setTecnico(String tecnico) {
+		this.tecnico = tecnico;
 	}
 
-	public int getIdVeiculo() {
-		return idVeiculo;
+	public String getVeiculo() {
+		return veiculo;
 	}
 
-	public void setIdVeiculo(int idVeiculo) {
-		this.idVeiculo = idVeiculo;
+	public void setVeiculo(String veiculo) {
+		this.veiculo = veiculo;
 	}
 
-	public int getIdCliente() {
-		return idCliente;
+	public String getCliente() {
+		return cliente;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
 	}
 
 }

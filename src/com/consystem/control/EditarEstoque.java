@@ -21,13 +21,13 @@ public class EditarEstoque extends HttpServlet {
 			throws ServletException, IOException {
 
 		String idEstoque = request.getParameter("idEstoque");
-		String idProduto = request.getParameter("idProduto");
+		String produto = request.getParameter("produto");
 		String quantidade = request.getParameter("quantidade");
 
 		Estoque est = new Estoque();
 		est.setIdEstoque(Integer.parseInt(idEstoque));
-		est.setIdProduto(Integer.parseInt(idProduto));
-		est.setQuantidade(Integer.parseInt(quantidade));
+		est.setProduto(produto);
+		est.setQuantidade(quantidade);
 
 		EstoqueDao dao = new EstoqueDao();
 		dao.editar(est);

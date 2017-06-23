@@ -29,7 +29,7 @@
 			 	<input type="hidden" name="idEstoque" value="<%=est.getIdEstoque() %>"/><br>
 			 	<div class="form-group">
 						<label>Produto</label>
-						<input type="text" class="form-control" name="idProduto" value="<%=est.getIdProduto() %>">
+						<input type="text" class="form-control" name="produto" value="<%=est.getProduto() %>">
 					</div>
 					<div class="form-group">
 						<label>Quantidade</label>

@@ -32,7 +32,7 @@
 				</tr>
 				<%
 					VeiculoDao dao = new VeiculoDao();
-					List<Veiculo> lista = dao.listaVeiculo();
+					List<Veiculo> lista = dao.getListarVeiculo();
 					for (Veiculo vel : lista) {
 				 %>
 				 <tr>

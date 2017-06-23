@@ -24,9 +24,9 @@ public class EstoqueDao {
 
 	public void add(Estoque est) {
 		try {
-			PreparedStatement stmt = con.prepareStatement("insert into estoque (idProduto, quantidade) values (?,?)");
-			stmt.setInt(1, est.getIdProduto());
-			stmt.setInt(2, est.getQuantidade());
+			PreparedStatement stmt = con.prepareStatement("insert into estoque (produto, quantidade) values (?,?)");
+			stmt.setString(1, est.getProduto());
+			stmt.setString(2, est.getQuantidade());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -34,7 +34,7 @@ public class EstoqueDao {
 		}
 	}
 
-	public List<Estoque> listarEstoque() {
+	public List<Estoque> getListarEstoque() {
 		List<Estoque> lista = new ArrayList<>();
 		try {
 			PreparedStatement stmt = con.prepareStatement("select * from estoque");
@@ -43,8 +43,8 @@ public class EstoqueDao {
 			while (rs.next()) {
 				Estoque est = new Estoque();
 				est.setIdEstoque(rs.getInt(1));
-				est.setIdProduto(rs.getInt(2));
-				est.setQuantidade(rs.getInt(3));
+				est.setProduto(rs.getString(2));
+				est.setQuantidade(rs.getString(3));
 				lista.add(est);
 			}
 			rs.close();
@@ -58,9 +58,9 @@ public class EstoqueDao {
 	public void editar(Estoque est) {
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("update estoque set idProduto = ?, quantidade = ? where idEstoque = ?");
-			stmt.setInt(1, est.getIdProduto());
-			stmt.setInt(2, est.getQuantidade());
+					.prepareStatement("update estoque set produto = ?, quantidade = ? where idEstoque = ?");
+			stmt.setString(1, est.getProduto());
+			stmt.setString(2, est.getQuantidade());
 			stmt.setInt(3, est.getIdEstoque());
 			stmt.execute();
 			stmt.close();
@@ -79,8 +79,8 @@ public class EstoqueDao {
 			if (rs.next()) {
 				est = new Estoque();
 				est.setIdEstoque(rs.getInt(1));
-				est.setIdProduto(rs.getInt(2));
-				est.setQuantidade(rs.getInt(3));
+				est.setProduto(rs.getString(2));
+				est.setQuantidade(rs.getString(3));
 			}
 			rs.close();
 			stmt.close();

@@ -38,7 +38,7 @@ public class VeiculoDao {
 		}
 	}
 
-	public List<Veiculo> listaVeiculo() {
+	public List<Veiculo> getListarVeiculo() {
 		List<Veiculo> lista = new ArrayList<>();
 		try {
 			PreparedStatement stmt = con.prepareStatement("select * from veiculo");

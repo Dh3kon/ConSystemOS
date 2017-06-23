@@ -13,6 +13,7 @@
 </head>
 <body>
 	<c:import url="menuadm.jsp"></c:import>
+	<jsp:useBean id="dao" class="com.consystem.dao.FornecedorDao"></jsp:useBean>
     <div class="jumbotron">
     	<div class="container">
 			<h2>Cadastro de Equipamentos</h2>
@@ -27,7 +28,12 @@
 				</div>
 				<div class="form-group">
 					<label>Fornecedor</label>
-					<input type="text" name="fornecedor" class="form-control" placeholder="Nome do Fornecedor">
+					<select class="form-control" name="fornecedor">
+						<option>Selecione...</option>
+						<c:forEach var="forn" items="${dao.lista}">
+							<option>${forn.nome}</option>						
+						</c:forEach>
+					</select>
 				</div>
 				<div class="form-group">
 					<label>Tipo</label>

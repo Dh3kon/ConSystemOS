@@ -20,12 +20,12 @@ public class CadastrarEstoque extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String idProduto = request.getParameter("idProduto");
+		String produto = request.getParameter("produto");
 		String quantidade = request.getParameter("quantidade");
 
 		Estoque est = new Estoque();
-		est.setIdProduto(Integer.parseInt(idProduto));
-		est.setQuantidade(Integer.parseInt(quantidade));
+		est.setProduto(produto);
+		est.setQuantidade(quantidade);
 
 		EstoqueDao dao = new EstoqueDao();
 		dao.add(est);

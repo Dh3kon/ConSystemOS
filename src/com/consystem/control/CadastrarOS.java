@@ -23,17 +23,17 @@ public class CadastrarOS extends HttpServlet {
 		String descricao = request.getParameter("descricao");
 		String status = request.getParameter("status");
 		String observacao = request.getParameter("observacao");
-		String idTecnico = request.getParameter("idTecnico");
-		String idVeiculo = request.getParameter("idVeiculo");
-		String idCliente = request.getParameter("idCliente");
+		String tecnico = request.getParameter("idTecnico");
+		String veiculo = request.getParameter("idVeiculo");
+		String cliente = request.getParameter("idCliente");
 
 		OrdemServico os = new OrdemServico();
 		os.setDescricao(descricao);
 		os.setStatus(status);
 		os.setObservacao(observacao);
-		os.setIdTecnico(Integer.parseInt(idTecnico));
-		os.setIdVeiculo(Integer.parseInt(idVeiculo));
-		os.setIdCliente(Integer.parseInt(idCliente));
+		os.setTecnico(tecnico);
+		os.setVeiculo(veiculo);
+		os.setCliente(cliente);
 
 		OrdemServicoDao dao = new OrdemServicoDao();
 		dao.add(os);

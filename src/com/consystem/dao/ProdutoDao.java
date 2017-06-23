@@ -38,7 +38,7 @@ public class ProdutoDao {
 		}
 	}
 
-	public List<Produto> listarProduto() {
+	public List<Produto> getLista() {
 		List<Produto> lista = new ArrayList<>();
 		try {
 			PreparedStatement stmt = con.prepareStatement("select * from produto");

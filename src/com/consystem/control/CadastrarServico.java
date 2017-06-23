@@ -21,12 +21,10 @@ public class CadastrarServico extends HttpServlet {
 			throws ServletException, IOException {
 
 		String descricao = request.getParameter("descricao");
-		String idTecnico = request.getParameter("idTecnico");
 		String pontuacao = request.getParameter("pontuacao");
 
 		Servico serv = new Servico();
 		serv.setDescricao(descricao);
-		serv.setIdTecnico(Integer.parseInt(idTecnico));
 		serv.setPontuacao(Integer.parseInt(pontuacao));
 
 		ServicoDao dao = new ServicoDao();

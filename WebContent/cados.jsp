@@ -13,6 +13,9 @@
 </head>
 <body>
 	<c:import url="menuadm.jsp"></c:import>
+	<jsp:useBean id="daot" class="com.consystem.dao.TecnicoDao"></jsp:useBean>
+	<jsp:useBean id="daov" class="com.consystem.dao.VeiculoDao"></jsp:useBean>
+	<jsp:useBean id="daoc" class="com.consystem.dao.ClienteDao"></jsp:useBean>
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Ordem de Serviço</h2>
@@ -31,15 +34,30 @@
 				</div>
 				<div class="form-group">
 					<label>Técnico</label>
-					<input type="text" class="form-control" name="idTecnico" placeholder=""><!-- ALTERAR -->
+					<select class="form-control" name="tecnico">
+						<option>Selecione...</option>
+						<c:forEach var="tec" items="${daot.lista}">
+							<option>${tec.nome}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="form-group">
 					<label>Veículo</label>
-					<input type="text" class="form-control" name="idVeiculo" placeholder=""><!-- ALTERAR -->
+					<select class="form-control" name="veiculo">
+						<option>Selecione...</option>
+						<c:forEach var="vel" items="${daov.listarVeiculo}">
+							<option>${vel.modelo}</option>
+						</c:forEach>
+					</select>					
 				</div>
 				<div class="form-group">
 					<label>Cliente</label>
-					<input type="Cliente" class="form-control" name="idCliente" placeholder=""><!-- ALTERAR -->
+					<select class="form-control" name="cliente">
+						<option>Selecione...</option>
+						<c:forEach var="cli" items="${daoc.nome}">
+							<option>${cli.nome}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<button type="submit" class="btn btn-primary" value="Salvar">Salvar</button>
 				<a class="btn btn-warning" href="cadequipamento.html" role="button">Limpar</a>

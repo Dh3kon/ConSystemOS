@@ -3,8 +3,8 @@ package com.consystem.model;
 public class Estoque {
 
 	private int idEstoque;
-	private int idProduto;
-	private int quantidade;
+	private String produto;
+	private String quantidade;
 
 	public int getIdEstoque() {
 		return idEstoque;
@@ -14,19 +14,19 @@ public class Estoque {
 		this.idEstoque = idEstoque;
 	}
 
-	public int getIdProduto() {
-		return idProduto;
+	public String getProduto() {
+		return produto;
 	}
 
-	public void setIdProduto(int idProduto) {
-		this.idProduto = idProduto;
+	public void setProduto(String produto) {
+		this.produto = produto;
 	}
 
-	public int getQuantidade() {
+	public String getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
 	}
 

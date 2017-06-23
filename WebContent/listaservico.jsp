@@ -23,7 +23,6 @@
 			<tr>
 				<td>Código</td>
 				<td>Descrição</td>
-				<td>Técnico</td>
 				<td>Pontuação</td>
 			</tr>
 				<%
@@ -34,7 +33,6 @@
 				 <tr>
 				 	<td><%=serv.getIdServico() %></td>
 				 	<td><%=serv.getDescricao() %></td>
-				 	<td><%=serv.getIdTecnico() %></td>
 				 	<td><%=serv.getPontuacao() %></td>
 				 	<td><a href="editaservico.jsp?idServico=<%=serv.getIdServico()%>">editar</a></td>
 				 	<td><a href="removeServico?idServico=<%=serv.getIdServico()%>">remover</a></td>

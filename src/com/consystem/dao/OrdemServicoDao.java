@@ -27,13 +27,13 @@ public class OrdemServicoDao {
 	public void add(OrdemServico os) {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
-					"insert into ordem_servico (descricao, status_os, observacao, idTecnico, idVeiculo, idCliente) values (?,?,?,?,?,?)");
+					"insert into ordem_servico (descricao, status_os, observacao, tecnico, veiculo, cliente) values (?,?,?,?,?,?)");
 			stmt.setString(1, os.getDescricao());
 			stmt.setString(2, os.getStatus());
 			stmt.setString(3, os.getObservacao());
-			stmt.setInt(4, os.getIdTecnico());
-			stmt.setInt(5, os.getIdVeiculo());
-			stmt.setInt(6, os.getIdCliente());
+			stmt.setString(4, os.getTecnico());
+			stmt.setString(5, os.getVeiculo());
+			stmt.setString(6, os.getCliente());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -63,9 +63,9 @@ public class OrdemServicoDao {
 				os.setDataFinalizacao(date2);
 				
 				os.setObservacao(rs.getString("observacao"));
-				os.setIdTecnico(rs.getInt("idTecnico"));
-				os.setIdVeiculo(rs.getInt("idVeiculo"));
-				os.setIdCliente(rs.getInt("idCliente"));
+				os.setTecnico(rs.getString("tecnico"));
+				os.setVeiculo(rs.getString("veiculo"));
+				os.setCliente(rs.getString("cliente"));
 				lista.add(os);
 
 			}
@@ -81,16 +81,16 @@ public class OrdemServicoDao {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
 					"update ordem_servico set descricao = ?, status_os = ?, dataFinalizacao = ?, observacao = ?, "
-							+ "idTecnico = ?, idVeiculo = ?, idCliente = ? where os = ?");// *****melhorar
+							+ "tecnico = ?, veiculo = ?, cliente = ? where os = ?");// *****melhorar
 																							// chamada
 																							// sql*****
 			stmt.setString(1, os.getDescricao());
 			stmt.setString(2, os.getStatus());
 			stmt.setDate(3, new Date(os.getDataFinalizacao().getTimeInMillis()));
 			stmt.setString(4, os.getObservacao());
-			stmt.setInt(5, os.getIdTecnico());
-			stmt.setInt(6, os.getIdVeiculo());
-			stmt.setInt(7, os.getIdCliente());
+			stmt.setString(5, os.getTecnico());
+			stmt.setString(6, os.getVeiculo());
+			stmt.setString(7, os.getCliente());
 			stmt.setInt(7, os.getOs());
 			stmt.executeUpdate();
 			stmt.close();
@@ -116,9 +116,9 @@ public class OrdemServicoDao {
 				cal.setTime(rs.getDate("dataFinalizacao"));
 				ord.setDataFinalizacao(cal);
 				ord.setObservacao(rs.getString("observacao"));
-				ord.setIdTecnico(rs.getInt("idTecnico"));
-				ord.setIdVeiculo(rs.getInt("idVeiculo"));
-				ord.setIdCliente(rs.getInt("idCliente"));
+				ord.setTecnico(rs.getString("tecnico"));
+				ord.setVeiculo(rs.getString("veiculo"));
+				ord.setCliente(rs.getString("cliente"));
 			}
 			rs.close();
 			stmt.close();

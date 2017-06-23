@@ -22,13 +22,11 @@ public class EditarServico extends HttpServlet {
 
 		String id = request.getParameter("idServico");
 		String descricao = request.getParameter("descricao");
-		String tecnico = request.getParameter("idTecnico");
 		String pontuacao = request.getParameter("pontuacao");
 
 		Servico serv = new Servico();
 		serv.setIdServico(Integer.parseInt(id));
 		serv.setDescricao(descricao);
-		serv.setIdTecnico(Integer.parseInt(tecnico));
 		serv.setPontuacao(Integer.parseInt(pontuacao));
 
 		ServicoDao dao = new ServicoDao();

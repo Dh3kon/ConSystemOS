@@ -32,10 +32,6 @@
 						<input type="text" class="form-control" name="descricao" value="<%=serv.getDescricao() %>">
 					</div>
 					<div class="form-group">
-						<label>Técnico</label>
-						<input type="text" class="form-control" name="idTecnico" value="<%=serv.getIdTecnico()%>">
-					</div>
-					<div class="form-group">
 						<label>Pontuação</label>
 						<input type="text" class="form-control" name="pontuacao" value="<%=serv.getPontuacao() %>">
 					</div>

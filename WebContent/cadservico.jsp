@@ -22,10 +22,6 @@
 						<input type="text" class="form-control" name="descricao" placeholder="Descrição do Serviço">
 					</div>
 					<div class="form-group">
-						<label>Técnico</label>
-						<input type="text" class="form-control" name="idTecnico" placeholder="Técnico">
-					</div>
-					<div class="form-group">
 						<label>Pontuação</label>
 						<input type="text" class="form-control" name="pontuacao" placeholder="Pontuação do Técnico">
 					</div>

@@ -44,7 +44,7 @@ public class FornecedorDao {
 		}
 	}
 
-	public List<Fornecedor> listarFornecedores() {
+	public List<Fornecedor> getListarFornecedor() {
 		List<Fornecedor> lista = new ArrayList<>();
 		try {
 			PreparedStatement stmt = con.prepareStatement("select * from fornecedor");

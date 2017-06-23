@@ -25,10 +25,9 @@ public class ServicoDao {
 	public void add(Servico serv) {
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("insert into servico (descricao, idTecnico, pontuacao) values (?,?,?)");
+					.prepareStatement("insert into servico (descricao, pontuacao) values (?,?)");
 			stmt.setString(1, serv.getDescricao());
-			stmt.setInt(2, serv.getIdTecnico());
-			stmt.setInt(3, serv.getPontuacao());
+			stmt.setInt(2, serv.getPontuacao());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -46,8 +45,7 @@ public class ServicoDao {
 				Servico serv = new Servico();
 				serv.setIdServico(rs.getInt(1));
 				serv.setDescricao(rs.getString(2));
-				serv.setIdTecnico(rs.getInt(3));
-				serv.setPontuacao(rs.getInt(4));
+				serv.setPontuacao(rs.getInt(3));
 				lista.add(serv);
 			}
 			rs.close();
@@ -61,11 +59,10 @@ public class ServicoDao {
 	public void editar(Servico serv) {
 		try {
 			PreparedStatement stmt = con.prepareStatement(
-					"update servico set descricao = ?, idTecnico = ?, pontuacao = ? where idServico = ?");
+					"update servico set descricao = ?, pontuacao = ? where idServico = ?");
 			stmt.setString(1, serv.getDescricao());
-			stmt.setInt(2, serv.getIdTecnico());
-			stmt.setInt(3, serv.getPontuacao());
-			stmt.setInt(4, serv.getIdServico());
+			stmt.setInt(2, serv.getPontuacao());
+			stmt.setInt(3, serv.getIdServico());
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (SQLException e) {
@@ -84,8 +81,7 @@ public class ServicoDao {
 				serv = new Servico();
 				serv.setIdServico(rs.getInt(1));
 				serv.setDescricao(rs.getString(2));
-				serv.setIdTecnico(rs.getInt(3));
-				serv.setPontuacao(rs.getInt(4));
+				serv.setPontuacao(rs.getInt(3));
 			}
 			rs.close();
 			stmt.close();
