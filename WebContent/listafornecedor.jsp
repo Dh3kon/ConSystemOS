@@ -29,12 +29,10 @@
 				<td>Cidade</td>
 				<td>Estado</td>
 				<td>Telefone</td>
-				<td>E-mail</td>
-				<td>Web site</td>
 			</tr>
 				<%
 					FornecedorDao dao = new FornecedorDao();
-					List<Fornecedor> lista = dao.listarFornecedores();
+					List<Fornecedor> lista = dao.getListarFornecedor();
 					for (Fornecedor forn : lista) {
 				 %>
 				 <tr>
@@ -46,8 +44,6 @@
 				 	<td><%=forn.getCidade() %></td>
 				 	<td><%=forn.getEstado() %></td>
 				 	<td><%=forn.getTelefone() %></td>
-				 	<td><%=forn.getEmail() %></td>
-				 	<td><%=forn.getSite() %></td>
 				 	<td><a href="editafornecedor.jsp?idFornecedor=<%=forn.getIdFornecedor() %>">editar</a></td>
 				 	<td><a href="removeFornecedor?idFornecedor=<%=forn.getIdFornecedor() %>">remover</a></td>
 				 </tr>

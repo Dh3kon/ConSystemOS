@@ -30,7 +30,7 @@
 			</tr>
 				<%
 					ProdutoDao dao = new ProdutoDao();
-					List<Produto> lista = dao.listarProduto();
+					List<Produto> lista = dao.getLista();
 					for (Produto prod : lista) {
 				%>
 				<tr>

@@ -54,7 +54,7 @@
 					<label>Cliente</label>
 					<select class="form-control" name="cliente">
 						<option>Selecione...</option>
-						<c:forEach var="cli" items="${daoc.nome}">
+						<c:forEach var="cli" items="${daoc.lista}">
 							<option>${cli.nome}</option>
 						</c:forEach>
 					</select>

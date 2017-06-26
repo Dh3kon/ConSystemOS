@@ -27,7 +27,7 @@
 			</tr>
 				<%
 					EstoqueDao dao = new EstoqueDao();
-					List<Estoque> lista = dao.listarEstoque();
+					List<Estoque> lista = dao.getListarEstoque();
 					for (Estoque est : lista) {
 				 %>
 				 <tr>

@@ -14,3 +14,7 @@ SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
 
 =================================================================
 
+2017/06/23
+->Adicionar erro no login
+->Adicionar pontuação/técnico
+->Criar campos de exibição, eliminando campos desnecessários nas listas

@@ -48,7 +48,7 @@
 					</select>
 				</div>
 				<button type="submit" class="btn btn-primary" value="Salvar">Atualizar</button>
-				<a class="btn btn-danger" href="listaveiculo.jsp" role="button">Voltar</a>
+				<a class="btn btn-danger" href="listausuario.jsp" role="button">Voltar</a>
 			 </form>
 		</div>
 	</div>

@@ -40,18 +40,18 @@
 			 	</div>
 			 	<div class="form-group">
 			 		<label>Técnico</label>
-					<input type="text" name="idTecnico" class="form-control" value="<%=os.getIdTecnico()%>"/><br>
+					<input type="text" name="idTecnico" class="form-control" value="<%=os.getTecnico()%>"/><br>
 			 	</div>
 			 	<div class="form-group">
 			 		<label>Veículo</label>
-					<input type="text" name="idVeiculo" class="form-control" value="<%=os.getIdVeiculo()%>"/><br>
+					<input type="text" name="idVeiculo" class="form-control" value="<%=os.getVeiculo()%>"/><br>
 			 	</div>
 			 	<div class="form-group">
 			 		<label>Cliente</label>
-					<input type="text" name="idCliente" class="form-control" value="<%=os.getIdCliente()%>"/><br>
+					<input type="text" name="idCliente" class="form-control" value="<%=os.getCliente()%>"/><br>
 			 	</div>
 			 	<button type="submit" class="btn btn-primary" value="Salvar">Atualizar</button>
-			 	<a class="btn btn-danger" href="listaveiculo.jsp" role="button">Voltar</a>
+			 	<a class="btn btn-danger" href="listaos.jsp" role="button">Voltar</a>
 			</form>
 	 	</div>
 	 </div>

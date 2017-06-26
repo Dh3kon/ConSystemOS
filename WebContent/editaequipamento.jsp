@@ -50,7 +50,7 @@
 				</div>
 				<button type="submit" class="btn btn-primary" value="Salvar">Salvar</button>
 				<a class="btn btn-warning" href="cadequipamento.html" role="button">Limpar</a>
-				<a class="btn btn-danger" href="index.html" role="button">Voltar</a>
+				<a class="btn btn-danger" href="listaequipamento.jsp" role="button">Voltar</a>
 			</form>
 		</div>
 	</div>

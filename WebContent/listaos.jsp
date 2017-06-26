@@ -41,9 +41,9 @@
 					 	<td>${os.descricao}</td>
 					 	<td>${os.status}</td>
 					 	<td>${os.observacao}</td>
-					 	<td>${os.idCliente}</td>
-					 	<td>${os.idTecnico}</td>
-					 	<td>${os.idVeiculo}</td>
+					 	<td>${os.cliente}</td>
+					 	<td>${os.tecnico}</td>
+					 	<td>${os.veiculo}</td>
 					 	<td><fmt:formatDate value="${os.dataFinalizacao.time}" pattern="dd/MM/yyyy"/></td>
 					 	<td><a href="editaos.jsp?os=${os.os}&dataos=<fmt:formatDate value="${os.dataOs.time}" pattern="dd/MM/yyyy"/>&dataf=<fmt:formatDate value="${os.dataFinalizacao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
 					 	<td><a href="removerOS?os=${os.os}">remover</a></td>

@@ -103,7 +103,7 @@ public class OrdemServicoDao {
 	public OrdemServico buscaId(int os) {
 		OrdemServico ord = null;
 		try {
-			PreparedStatement stmt = con.prepareStatement("select os, descricao, status_os, dataFinalizacao, observacao, idTecnico, idVeiculo, idCliente from ordem_servico where os = ?");
+			PreparedStatement stmt = con.prepareStatement("select os, descricao, status_os, dataFinalizacao, observacao, tecnico, veiculo, cliente from ordem_servico where os = ?");
 			stmt.setInt(1, os);
 			ResultSet rs = stmt.executeQuery();
 

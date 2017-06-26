@@ -26,33 +26,25 @@
 				<tr>
 					<td>Código</td>
 					<td>Nome</td>
-					<td>RG</td>
-					<td>CPF</td>
 					<td>Telefone para Contato</td>
 					<td>Endereço</td>
 					<td>Bairro</td>
 					<td>Cidade</td>
 					<td>Estado</td>
-					<td>Data de Nasc</td>
 					<td>Data de Admissão</td>
 					<td>Função</td>
-					<td>Observação</td>
 				</tr>
 				<c:forEach var="tec" items="${dao.lista}">
 					<tr>
 						<td>${tec.idTecnico}</td>
 						<td>${tec.nome}</td>
-						<td>${tec.rg }</td>
-						<td>${tec.cpf}</td>
 						<td>${tec.telContato}</td>
 						<td>${tec.endereco}</td>
 						<td>${tec.bairro}</td>
 						<td>${tec.cidade}</td>
 						<td>${tec.estado}</td>
-						<td><fmt:formatDate value="${tec.dataNasc.time}" pattern="dd/MM/yyyy"/></td>
 						<td><fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/></td>
 						<td>${tec.funcao}</td>
-						<td>${tec.obs}</td>
 						<td><a href="editatecnico.jsp?idTecnico=${tec.idTecnico}&datan=<fmt:formatDate value="${tec.dataNasc.time}" pattern="dd/MM/yyyy"/>&datad=<fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
 						<td><a href="removerTecnico?idTecnico=${tec.idTecnico}">remover</a></td>
 					</tr>

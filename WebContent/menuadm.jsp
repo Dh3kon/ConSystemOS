@@ -53,8 +53,20 @@
 										<li><a href="listafornecedor.jsp">Fornecedor</a></li>
 										<li><a href="listaos.jsp">Ordem de Serviço</a></li>
 									</ul></li>
-								<li class=""><a href="relatorios.html">Relatórios<span
-										class="sr-only">(current)</span></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Relatório <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="Relatorio?nome=listaUsuario" target="_novo">Usuário</a></li>
+										<li><a href="#">Veículo</a></li>
+										<li><a href="Relatorio?nome=listaTecnico" target="_novo">Técnico</a></li>
+										<li><a href="Relatorio?nome=listaProduto" target="_novo">Produto</a></li>
+										<li><a href="#">Equipamento</a></li>
+										<li><a href="#">Serviço</a></li>
+										<li><a href="#">Estoque</a></li>
+										<li><a href="Relatorio?nome=listaFornecedor" target="_novo">Fornecedor</a></li>
+										<li><a href="#">Ordem de Serviço</a></li>
+									</ul></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
