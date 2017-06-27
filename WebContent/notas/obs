@@ -12,9 +12,14 @@ SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
 2017/06/21
 ->Eliminar campo Tecnico - Table Serviços - Cadastro Serviços
 
-=================================================================
+================================================================
 
 2017/06/23
 ->Adicionar erro no login
 ->Adicionar pontuação/técnico
 ->Criar campos de exibição, eliminando campos desnecessários nas listas
+
+================================================================
+
+2017/06/27
+->Remover item de edição listas - TEC

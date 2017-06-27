@@ -1,3 +1,4 @@
+<%@page import="com.consystem.model.Usuario"%>
 <%@page import="com.consystem.dao.EquipamentoDao"%>
 <%@page import="com.consystem.model.Equipamento"%>
 <%@page import="java.util.List"%>
@@ -15,7 +16,19 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<c:import url="menuadm.jsp"></c:import>
+	<%
+		Usuario user1 = (Usuario) session.getAttribute("user");
+		if (user1.getTipo().equals("TEC")) {
+	%>
+			<c:import url="menutec.jsp"></c:import>
+	<%		
+		}
+		if (user1.getTipo().equals("ADM")) {
+	%>
+			<c:import url="menuadm.jsp"></c:import>
+	<%
+		}	 
+	%>
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Lista de Equipamentos</h2>

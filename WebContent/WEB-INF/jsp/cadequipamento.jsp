@@ -30,7 +30,7 @@
 					<label>Fornecedor</label>
 					<select class="form-control" name="fornecedor">
 						<option>Selecione...</option>
-						<c:forEach var="forn" items="${dao.lista}">
+						<c:forEach var="forn" items="${dao.listarFornecedor}">
 							<option>${forn.nome}</option>						
 						</c:forEach>
 					</select>

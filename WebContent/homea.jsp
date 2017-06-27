@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<c:import url="menuadm.jsp"></c:import>
+	<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<div class="jumbotron">
       <div class="container">
         <h1>Bem vindo!</h1>

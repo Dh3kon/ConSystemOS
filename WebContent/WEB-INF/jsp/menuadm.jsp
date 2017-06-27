@@ -29,15 +29,15 @@
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Cadastrar <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="cadusuarios.jsp">Usuário</a></li>
-										<li><a href="cadveiculos.jsp">Veículo</a></li>
-										<li><a href="cadtecnicos.jsp">Técnico</a></li>
-										<li><a href="cadprodutos.jsp">Produto</a></li>
-										<li><a href="cadequipamento.jsp">Equipamento</a></li>
-										<li><a href="cadservico.jsp">Serviço</a></li>
-										<li><a href="cadestoque.jsp">Estoque</a></li>
-										<li><a href="cadfornecedor.jsp">Fornecedor</a></li>
-										<li><a href="cados.jsp">Ordem de Serviço</a></li>
+										<li><a href="redirect?action=usr">Usuário</a></li>
+										<li><a href="redirect?action=vel">Veículo</a></li>
+										<li><a href="redirect?action=tec">Técnico</a></li>
+										<li><a href="redirect?action=prod">Produto</a></li>
+										<li><a href="redirect?action=eqpto">Equipamento</a></li>
+										<li><a href="redirect?action=serv">Serviço</a></li>
+										<li><a href="redirect?action=estq">Estoque</a></li>
+										<li><a href="redirect?action=forn">Fornecedor</a></li>
+										<li><a href="redirect?action=orsv">Ordem de Serviço</a></li>
 									</ul></li>
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown" role="button" aria-haspopup="true"
