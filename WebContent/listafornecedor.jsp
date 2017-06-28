@@ -25,7 +25,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -57,7 +57,13 @@
 				 	<td><%=forn.getCidade() %></td>
 				 	<td><%=forn.getEstado() %></td>
 				 	<td><%=forn.getTelefone() %></td>
-				 	<td><a href="editafornecedor.jsp?idFornecedor=<%=forn.getIdFornecedor() %>">editar</a></td>
+				 	<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="editafornecedor.jsp?idFornecedor=<%=forn.getIdFornecedor() %>">editar</a></td>
+					<%
+						}
+					%>
 				 	<td><a href="removeFornecedor?idFornecedor=<%=forn.getIdFornecedor() %>">remover</a></td>
 				 </tr>
 				 <% } %>

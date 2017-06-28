@@ -25,7 +25,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -47,7 +47,13 @@
 				 	<td><%=serv.getIdServico() %></td>
 				 	<td><%=serv.getDescricao() %></td>
 				 	<td><%=serv.getPontuacao() %></td>
-				 	<td><a href="editaservico.jsp?idServico=<%=serv.getIdServico()%>">editar</a></td>
+					 	<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="editaservico.jsp?idServico=<%=serv.getIdServico()%>">editar</a></td>
+					<%
+						}
+					%>	
 				 	<td><a href="removeServico?idServico=<%=serv.getIdServico()%>">remover</a></td>
 				 </tr>
 				 <% } %>

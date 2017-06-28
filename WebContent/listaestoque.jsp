@@ -25,7 +25,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -47,7 +47,13 @@
 				 	<td><%=est.getIdEstoque() %></td>
 				 	<td><%=est.getProduto() %></td>
 				 	<td><%=est.getQuantidade() %></td>
-				 	<td><a href="editaestoque.jsp?idEstoque=<%=est.getIdEstoque()%>">editar</a></td>
+				 	<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="editaestoque.jsp?idEstoque=<%=est.getIdEstoque()%>">editar</a></td>
+					<%
+						}
+					%>	
 				 	<td><a href="removeEstoque?idEstoque=<%=est.getIdEstoque()%>">remover</a></td>
 				 </tr>
 				 <% } %>

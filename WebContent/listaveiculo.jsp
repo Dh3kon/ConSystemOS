@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<%
+<%
 		Usuario user1 = (Usuario) session.getAttribute("user");
 		if (user1.getTipo().equals("TEC")) {
 	%>
@@ -25,7 +25,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -55,8 +55,14 @@
 				 	<td><%=vel.getPlaca() %></td>
 				 	<td><%=vel.getAno() %></td>
 				 	<td><%=vel.getStatus() %></td>
-				 	<td><a href="editaveiculo.jsp?idVeiculo=<%=vel.getIdVeiculo() %>">editar</a></td>
-				 	<td><a href="removerVeiculo?idVeiculo=<%=vel.getIdVeiculo() %>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+						<td><a href="editaveiculo.jsp?idVeiculo=<%=vel.getIdVeiculo() %>">editar</a></td>
+					<%
+						}
+					%>	
+					<td><a href="removerVeiculo?idVeiculo=<%=vel.getIdVeiculo() %>">remover</a></td>
 				 </tr>
 				 <% } %>
 			</table>

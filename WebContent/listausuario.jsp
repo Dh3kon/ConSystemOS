@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<%
+<%
 		Usuario user1 = (Usuario) session.getAttribute("user");
 		if (user1.getTipo().equals("TEC")) {
 	%>
@@ -24,7 +24,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -50,7 +50,13 @@
 				 	<td><%=user.getSenha() %></td>
 				 	<td><%=user.getTecnico() %></td>
 				 	<td><%=user.getTipo() %></td>
-				 	<td><a href="editausuario.jsp?idUsuario=<%=user.getIdUsuario()%>">editar</a></td>
+				 	<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="editausuario.jsp?idUsuario=<%=user.getIdUsuario()%>">editar</a></td>
+					<%
+						}
+					%>	
 				 	<td><a href="removeUsuario?idUsuario=<%=user.getIdUsuario() %>">remover</a></td>
 				 </tr>
 				<% } %>

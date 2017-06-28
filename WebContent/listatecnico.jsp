@@ -1,11 +1,12 @@
+<%@page import="com.consystem.model.Usuario"%>
 <%@page import="com.consystem.model.Tecnico"%>
 <%@page import="java.util.List"%>
 <%@page import="com.consystem.dao.TecnicoDao"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +18,19 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<c:import url="menuadm.jsp"></c:import>
+	<%
+		Usuario user1 = (Usuario) session.getAttribute("user");
+		if (user1.getTipo().equals("TEC")) {
+	%>
+			<c:import url="menutec.jsp"></c:import>
+	<%		
+		}
+		if (user1.getTipo().equals("ADM")) {
+	%>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
+	<%
+		}	 
+	%>
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Lista de Técnicos</h2>
@@ -43,9 +56,16 @@
 						<td>${tec.bairro}</td>
 						<td>${tec.cidade}</td>
 						<td>${tec.estado}</td>
-						<td><fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/></td>
+						<td><fmt:formatDate value="${tec.dataAdmissao.time}"
+								pattern="dd/MM/yyyy" /></td>
 						<td>${tec.funcao}</td>
-						<td><a href="editatecnico.jsp?idTecnico=${tec.idTecnico}&datan=<fmt:formatDate value="${tec.dataNasc.time}" pattern="dd/MM/yyyy"/>&datad=<fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
+						<%
+							if (user1.getTipo().equals("ADM")) {
+						%>
+							<td><a href="editatecnico.jsp?idTecnico=${tec.idTecnico}&datan=<fmt:formatDate value="${tec.dataNasc.time}" pattern="dd/MM/yyyy"/>&datad=<fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
+						<%
+							}
+						%>	
 						<td><a href="removerTecnico?idTecnico=${tec.idTecnico}">remover</a></td>
 					</tr>
 				</c:forEach>

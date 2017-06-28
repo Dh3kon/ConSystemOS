@@ -24,7 +24,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -58,7 +58,13 @@
 					 	<td>${os.tecnico}</td>
 					 	<td>${os.veiculo}</td>
 					 	<td><fmt:formatDate value="${os.dataFinalizacao.time}" pattern="dd/MM/yyyy"/></td>
+					 	<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
 					 	<td><a href="editaos.jsp?os=${os.os}&dataos=<fmt:formatDate value="${os.dataOs.time}" pattern="dd/MM/yyyy"/>&dataf=<fmt:formatDate value="${os.dataFinalizacao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
+					<%
+						}
+					%>
 					 	<td><a href="removerOS?os=${os.os}">remover</a></td>
 					 </tr>
 				 </c:forEach>

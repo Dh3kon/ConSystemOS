@@ -25,7 +25,7 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
@@ -53,7 +53,13 @@
 					<td><%=equip.getFornecedor() %></td>
 					<td><%=equip.getTipo() %></td>
 					<td><%=equip.getNumSerie() %></td>
-					<td><a href="editaequipamento.jsp?idEquip=<%=equip.getIdEquipamento()%>">editar</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+						<td><a href="editaequipamento.jsp?idEquip=<%=equip.getIdEquipamento()%>">editar</a></td>
+					<%
+						}
+					%>	
 					<td><a href="removerEquipamento?idEquip=<%=equip.getIdEquipamento()%>">remover</a></td>		
 			 	</tr>
 			 <% } %>
