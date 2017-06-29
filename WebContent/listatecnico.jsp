@@ -36,17 +36,19 @@
 			<h2>Lista de Técnicos</h2>
 			<jsp:useBean id="dao" class="com.consystem.dao.TecnicoDao"></jsp:useBean>
 			<table class="table table-hover">
-				<tr>
-					<td>Código</td>
-					<td>Nome</td>
-					<td>Telefone para Contato</td>
-					<td>Endereço</td>
-					<td>Bairro</td>
-					<td>Cidade</td>
-					<td>Estado</td>
-					<td>Data de Admissão</td>
-					<td>Função</td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Nome</th>
+						<th>Telefone para Contato</th>
+						<th>Endereço</th>
+						<th>Bairro</th>
+						<th>Cidade</th>
+						<th>Estado</th>
+						<th>Data de Admissão</th>
+						<th>Função</th>
+					</tr>
+				</thead>
 				<c:forEach var="tec" items="${dao.lista}">
 					<tr>
 						<td>${tec.idTecnico}</td>
@@ -65,8 +67,14 @@
 							<td><a href="editatecnico.jsp?idTecnico=${tec.idTecnico}&datan=<fmt:formatDate value="${tec.dataNasc.time}" pattern="dd/MM/yyyy"/>&datad=<fmt:formatDate value="${tec.dataAdmissao.time}" pattern="dd/MM/yyyy"/>">editar</a></td>
 						<%
 							}
-						%>	
+						%>
+						<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
 						<td><a href="removerTecnico?idTecnico=${tec.idTecnico}">remover</a></td>
+					<%
+						}
+					%>		
 					</tr>
 				</c:forEach>
 			</table>

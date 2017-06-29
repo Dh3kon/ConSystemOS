@@ -1,8 +1,9 @@
 *2017/05/26
-->alterar status das páginas de edição de text para <select>
+->alterar status das páginas de edição de text para <select> ok
+
 *2017/05/30
 ->alterar campos <text> email
-->alterar funções timestamp
+->alterar funções timestamp ok
 ->alterar/criar página de finalização de OS
 
 ================================================================
@@ -10,7 +11,7 @@
 SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
 
 2017/06/21
-->Eliminar campo Tecnico - Table Serviços - Cadastro Serviços
+->Eliminar campo Tecnico - Table Serviços - Cadastro Serviços ok
 
 ================================================================
 
@@ -23,3 +24,7 @@ SimpleDateFormat formatador = new SimpleDateFormat(dd/MM/yyyy)
 
 2017/06/27
 ->Remover item de edição listas - TEC
+->Adicionar entrada de produtos
+->Relação de roteiros
+->Tabela e tela de contabilização de pontos
+->Preenchimento de clientes e chamados

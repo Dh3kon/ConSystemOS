@@ -58,14 +58,14 @@
 									aria-expanded="false">Relatório <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="Relatorio?nome=listaUsuario" target="_novo">Usuário</a></li>
-										<li><a href="#">Veículo</a></li>
+										<li><a href="Relatorio?nome=listaVeiculo" target="_novo">Veículo</a></li>
 										<li><a href="Relatorio?nome=listaTecnico" target="_novo">Técnico</a></li>
 										<li><a href="Relatorio?nome=listaProduto" target="_novo">Produto</a></li>
-										<li><a href="#">Equipamento</a></li>
-										<li><a href="#">Serviço</a></li>
-										<li><a href="#">Estoque</a></li>
+										<li><a href="Relatorio?nome=listaEquipamento" target="_novo">Equipamento</a></li>
+										<li><a href="Relatorio?nome=listaServicos" target="_novo">Serviço</a></li>
+										<li><a href="Relatorio?nome=listaEstoque" target="_novo">Estoque</a></li>
 										<li><a href="Relatorio?nome=listaFornecedor" target="_novo">Fornecedor</a></li>
-										<li><a href="#">Ordem de Serviço</a></li>
+										<li><a href="Relatorio?nome=listaOs" target="_novo">Ordem de Serviço</a></li>
 									</ul></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">

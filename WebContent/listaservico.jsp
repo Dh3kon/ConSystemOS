@@ -33,14 +33,16 @@
 		<div class="container">
 			<h2>Lista de Serviços</h2>
 			<table class="table table-hover">
-			<tr>
-				<td>Código</td>
-				<td>Descrição</td>
-				<td>Pontuação</td>
-			</tr>
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Descrição</th>
+						<th>Pontuação</th>
+					</tr>
+				</thead>
 				<%
 					ServicoDao dao = new ServicoDao();
-					List<Servico> lista = dao.listarServico();
+					List<Servico> lista = dao.getListarServico();
 					for (Servico serv : lista) {
 				 %>
 				 <tr>
@@ -54,7 +56,13 @@
 					<%
 						}
 					%>	
-				 	<td><a href="removeServico?idServico=<%=serv.getIdServico()%>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="removeServico?idServico=<%=serv.getIdServico()%>">remover</a></td>
+					<%
+						}
+					%>	
 				 </tr>
 				 <% } %>
 			</table>

@@ -33,16 +33,18 @@
 		<div class="container">
 			<h2>Lista de Veículos</h2>
 			<table class="table table-hover" >
-				<tr>
-					<td>ID</td>
-					<td>Modelo</td>
-					<td>Marca</td>
-					<td>Placa</td>
-					<td>Ano</td>
-					<td>Status</td>
-					<td></td>
-					<td></td>
-				</tr>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Modelo</th>
+						<th>Marca</th>
+						<th>Placa</th>
+						<th>Ano</th>
+						<th>Status</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
 				<%
 					VeiculoDao dao = new VeiculoDao();
 					List<Veiculo> lista = dao.getListarVeiculo();
@@ -62,7 +64,13 @@
 					<%
 						}
 					%>	
-					<td><a href="removerVeiculo?idVeiculo=<%=vel.getIdVeiculo() %>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+						<td><a href="removerVeiculo?idVeiculo=<%=vel.getIdVeiculo() %>">remover</a></td>
+					<%
+						}
+					%>	
 				 </tr>
 				 <% } %>
 			</table>

@@ -22,14 +22,14 @@
 		}
 		if (user1.getTipo().equals("ADM")) {
 	%>
-			<c:import url="menuadm.jsp"></c:import>
+			<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		}	 
 	%>
 	<div class="jumbotron">
       <div class="container">
         <h1>Ops!!! Um erro ocorreu :/ </h1>
-        <p>Este aplicativo foi desenvolvido pela equipe ConSystem</p>
+        <h2>Esta página não está acessível ou não esta autorizado o acesso.</h2>
       </div>
     </div>
 </body>

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<c:import url="menuadm.jsp"></c:import>
+	<c:import url="WEB-INF/jsp/menuadm.jsp"></c:import>
 	<%
 		Veiculo vel = new Veiculo();
 		VeiculoDao dao = new VeiculoDao();

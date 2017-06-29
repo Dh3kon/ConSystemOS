@@ -30,12 +30,7 @@
 					</div>
 					<div class="form-group">
 						<label>Quantidade</label>
-						<select class="form-control" name="quantidade">
-							<option>Selecione...</option>
-							<c:forEach var="forn" items="${daof.listarFornecedor}">
-								<option>${forn.nome}</option>
-							</c:forEach>
-						</select>
+						<input type="text" name="quantidade" class="form-control" placeholder="Quantidade do item">
 					</div>
 					<button type="submit" class="btn btn-primary" value="Salvar">Salvar</button>
 					<a class="btn btn-warning" href="cadequipamento.html" role="button">Limpar</a>

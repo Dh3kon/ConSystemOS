@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.consystem.model.Usuario;
+
 @WebServlet("/redirect")
 public class RedirectPage extends HttpServlet{
 
@@ -18,6 +20,7 @@ public class RedirectPage extends HttpServlet{
 		
 		String action = request.getParameter("action");
 		String next = null;
+		Usuario user = new Usuario();
 		
 		if("usr".equals(action)) {
 			next = "WEB-INF/jsp/cadusuarios.jsp";
@@ -37,7 +40,7 @@ public class RedirectPage extends HttpServlet{
 			next = "WEB-INF/jsp/cadfornecedor.jsp";
 		} else if ("orsv".equals(action)) {
 			next = "WEB-INF/jsp/cados.jsp";
-		}
+		} 
 		
 		request.getRequestDispatcher(next).forward(request, response);
 	}

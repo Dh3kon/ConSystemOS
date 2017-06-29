@@ -16,13 +16,19 @@
 	<jsp:useBean id="daot" class="com.consystem.dao.TecnicoDao"></jsp:useBean>
 	<jsp:useBean id="daov" class="com.consystem.dao.VeiculoDao"></jsp:useBean>
 	<jsp:useBean id="daoc" class="com.consystem.dao.ClienteDao"></jsp:useBean>
+	<jsp:useBean id="daos" class="com.consystem.dao.ServicoDao"></jsp:useBean>
 	<div class="jumbotron">
 		<div class="container">
 			<h2>Ordem de Serviço</h2>
 			<form action="cadOS" method="post">
 				<div class="form-group">
 					<label>Descrição</label>
-					<input type="text" class="form-control" name="descricao" placeholder="Descrição da Ordem de Serviço">
+					<select class="form-control" name="descricao">
+						<option>Selecione...</option>
+						<c:forEach var="serv" items="${daos.listarServico}">
+							<option>${serv.descricao}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="form-group">
 					<label>Status</label>

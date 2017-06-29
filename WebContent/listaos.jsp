@@ -65,7 +65,13 @@
 					<%
 						}
 					%>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
 					 	<td><a href="removerOS?os=${os.os}">remover</a></td>
+					<%
+						}
+					%>	
 					 </tr>
 				 </c:forEach>
 			</table>

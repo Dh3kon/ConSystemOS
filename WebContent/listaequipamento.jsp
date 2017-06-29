@@ -33,14 +33,16 @@
 		<div class="container">
 			<h2>Lista de Equipamentos</h2>
 			 <table class="table table-hover">
-			 <tr>
-			 	<td>Código</td>
-			 	<td>Descrição</td>
-			 	<td>Marca</td>
-			 	<td>Fornecedor</td>
-			 	<td>Tipo</td>
-			 	<td>Número de Série</td>
-			 </tr>
+			 	<thead>
+					 <tr>
+					 	<th>Código</th>
+					 	<th>Descrição</th>
+					 	<th>Marca</th>
+					 	<th>Fornecedor</th>
+					 	<th>Tipo</th>
+					 	<th>Número de Série</th>
+					 </tr>
+				</thead>
 			<%
 				EquipamentoDao dao = new EquipamentoDao();
 				List<Equipamento> lista = dao.listarEquipamantos();
@@ -60,7 +62,13 @@
 					<%
 						}
 					%>	
-					<td><a href="removerEquipamento?idEquip=<%=equip.getIdEquipamento()%>">remover</a></td>		
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+						<td><a href="removerEquipamento?idEquip=<%=equip.getIdEquipamento()%>">remover</a></td>		
+					<%
+						}
+					%>	
 			 	</tr>
 			 <% } %>
 			 </table>

@@ -35,7 +35,7 @@ public class ServicoDao {
 		}
 	}
 
-	public List<Servico> listarServico() {
+	public List<Servico> getListarServico() {
 		List<Servico> lista = new ArrayList<>();
 		try {
 			PreparedStatement stmt = con.prepareStatement("select * from servico");

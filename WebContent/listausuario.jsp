@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SistemaOS - Lista de Usuários</title>
+<title>ConSystem - Lista de Usuários</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -32,13 +32,15 @@
 		<div class="container">
 			<h2>Lista de Usuários</h2>
 			<table class="table table-hover" >
-				<tr>
-					<td></td>
-					<td>Login</td>
-					<td>Senha</td>
-					<td>ID Técnico</td>
-					<td>Tipo</td>
-				</tr>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Login</th>
+						<th>Senha</th>
+						<th>Técnico</th>
+						<th>Tipo</th>
+					</tr>
+				</thead>
 				<%
 					UsuarioDao dao = new UsuarioDao();
 					List<Usuario> lista = dao.listarUsuarios();
@@ -57,7 +59,13 @@
 					<%
 						}
 					%>	
-				 	<td><a href="removeUsuario?idUsuario=<%=user.getIdUsuario() %>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="removeUsuario?idUsuario=<%=user.getIdUsuario() %>">remover</a></td>
+					<%
+						}
+					%>	
 				 </tr>
 				<% } %>
 			</table>

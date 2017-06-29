@@ -33,11 +33,13 @@
 		<div class="container">
 			<h2>Lista de Itens do Estoque</h2>
 			<table class="table table-hover">
-			<tr>
-				<td>Código</td>
-				<td>Produto</td>
-				<td>Quantidade</td>
-			</tr>
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Produto</th>
+						<th>Quantidade</th>
+					</tr>
+				</thead>
 				<%
 					EstoqueDao dao = new EstoqueDao();
 					List<Estoque> lista = dao.getListarEstoque();
@@ -54,7 +56,13 @@
 					<%
 						}
 					%>	
-				 	<td><a href="removeEstoque?idEstoque=<%=est.getIdEstoque()%>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="removeEstoque?idEstoque=<%=est.getIdEstoque()%>">remover</a></td>
+					<%
+						}
+					%>	
 				 </tr>
 				 <% } %>
 			</table>

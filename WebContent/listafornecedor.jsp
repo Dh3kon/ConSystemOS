@@ -33,16 +33,18 @@
 		<div class="container">
 			<h2>Lista de Fornecedores</h2>
 			<table class="table table-hover">
-			<tr>
-				<td>Código</td>
-				<td>Nome</td>
-				<td>CNPJ</td>
-				<td>Insc. Estadual</td>
-				<td>Endereço</td>
-				<td>Cidade</td>
-				<td>Estado</td>
-				<td>Telefone</td>
-			</tr>
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Nome</th>
+						<th>CNPJ</th>
+						<th>Insc. Estadual</th>
+						<th>Endereço</th>
+						<th>Cidade</th>
+						<th>Estado</th>
+						<th>Telefone</th>
+					</tr>
+				</thead>
 				<%
 					FornecedorDao dao = new FornecedorDao();
 					List<Fornecedor> lista = dao.getListarFornecedor();
@@ -64,7 +66,13 @@
 					<%
 						}
 					%>
-				 	<td><a href="removeFornecedor?idFornecedor=<%=forn.getIdFornecedor() %>">remover</a></td>
+					<%
+						if (user1.getTipo().equals("ADM")) {
+					%>
+					 	<td><a href="removeFornecedor?idFornecedor=<%=forn.getIdFornecedor() %>">remover</a></td>
+					<%
+						}
+					%>	
 				 </tr>
 				 <% } %>
 			</table>
